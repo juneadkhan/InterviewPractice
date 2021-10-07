@@ -11,6 +11,7 @@ rotate 3 steps to the right: [5,6,7,1,2,3,4]
 """
 
 def rotate(self, nums: List[int], k: int) -> None:
+    k=k%len(nums) # Defensive for when k == len(nums)
     nums[:] = nums[-k:] + nums[:-k]
 
 
