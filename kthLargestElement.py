@@ -8,10 +8,10 @@ Output: 5
 
 """
 
-# O(n) Time, O(1) Space
+# O(n lg n) Time, O(1) Space
 def findKthLargest(nums: List[int], k: int) -> int:
     heapq._heapify_max(nums) # Turn nums array into MaxBinHeap
     for i in range(k):
         # Perform K pops of max of BinHeap to get Kth Max.
-        maxi = heapq._heappop_max(nums) # O(1) to get max of BinHeap. 
+        maxi = heapq._heappop_max(nums) # O(lg(n)) to delete from binHeap.
     return maxi
